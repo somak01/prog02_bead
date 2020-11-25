@@ -216,9 +216,9 @@ def mainFunctionGenerateLab(wall, cell, unvisited, height, width, maze):
                 continue
 
         # Falak kitörlése a listából
-        for wal in walls:
-            if (wal[0] == rand_wall[0] and wal[1] == rand_wall[1]):
-                walls.remove(wal)
+        for wall_2 in walls:
+            if (wall_2[0] == rand_wall[0] and wall_2[1] == rand_wall[1]):
+                walls.remove(wall_2)
 
     # maradék érintetlen blokk fallá alakítása:
     for i in range(0, height):
@@ -228,12 +228,12 @@ def mainFunctionGenerateLab(wall, cell, unvisited, height, width, maze):
 
     # start megjelölése
     for i in range(0, width):
-        if (maze[1][i] == wall):
+        if maze[1][i] == cell:
             maze[0][i] = '3'
             break
     # end megjelölése
     for i in range(width - 1, 0, -1):
-        if (maze[height - 2][i] == wall):
+        if maze[height - 2][i] == cell:
             maze[height - 1][i] = '2'
             break
 
